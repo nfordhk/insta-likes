@@ -7,30 +7,32 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # Launch Firefox
 driver = webdriver.Firefox()
-driver.maximize_window()
+driver.implicitly_wait(15)
+# driver.maximize_window()
 
 # Navigate to URL
-driver.get("https://instagram.com")
+driver.get('https://instagram.com')
 
 # Redirect to Login from Signup
 redirect_login_element = driver.find_element_by_css_selector('.izU2O > a:nth-child(1)')
 redirect_login_element.click()
 
 # Send username and password
-# Not working, CSS and Xpath dynamic....
-driver.find_element_by_xpath("//*[@id=\"f3ef0e7f67ebb64\"]").send_keys("username")
-driver.find_element_by_xpath("//*[@id=\"f2c74ebcad4cf8e\"]").send_keys("password")
+driver.find_element_by_xpath('//*[@name="username"]').send_keys('username')
+driver.find_element_by_xpath('//*[@name="password"]').send_keys('password')
 
 # Click login Link
 login_element = driver.find_element_by_css_selector("._5f5mN")
 login_element.click()
 
+# Notifications Screen
+# This may not be required if an account has notifications "on" 
+turnOffNotifications = driver.find_element_by_css_selector('button.aOOlW:nth-child(2)')
+turnOffNotifications.click()
+
 # Like a photo
-# Only Links first photo, setup loop
-like_element = driver.find_element_by_css_selector("article._8Rm4L:nth-child(1) > div:nth-child(3) > section:nth-child(1) > span:nth-child(1) > button:nth-child(1)")
+like_element = driver.find_element_by_css_selector('article._8Rm4L:nth-child(1) > div:nth-child(3) > section:nth-child(1) > span:nth-child(1) > button:nth-child(1)')
 like_element.click()
 
 # Exit Browser when finished
 browser.close()
-
-
