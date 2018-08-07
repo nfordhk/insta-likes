@@ -30,7 +30,7 @@ login_element.click()
 turnOffNotifications = driver.find_element_by_css_selector('button.aOOlW:nth-child(2)')
 turnOffNotifications.click()
 
-# Like a photo
+# Likes a photo in user's feed
 like_element = driver.find_element_by_css_selector('article._8Rm4L:nth-child(1) > div:nth-child(3) > section:nth-child(1) > span:nth-child(1) > button:nth-child(1)')
 like_element.click()
 
