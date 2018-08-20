@@ -31,16 +31,11 @@ turnOffNotifications = driver.find_element_by_css_selector('button.aOOlW:nth-chi
 turnOffNotifications.click()
 
 # Feed URLs from Text File
-with open("autoRounds.txt") as fi:
-    urls = fi.read().splitlines()
+with open("autoRounds.txt") as file:
+    urls = file.read()
 
-for url in urls:                                     
-    driver = webdriver.Firefox()                           
+for url in urls:                                                              
     driver.get(url)
-
-# Likes a photo in user's feed
-# like_element = driver.find_element_by_css_selector('article._8Rm4L:nth-child(1) > div:nth-child(3) > section:nth-child(1) > span:nth-child(1) > button:nth-child(1)')
-# like_element.click()
 
 # Exit Browser when finished
 browser.close()
