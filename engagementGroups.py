@@ -36,14 +36,13 @@ with open("autoRounds.txt") as file:
 
 for url in urls:                                                               
     driver.get(url)
+    # Click on First Photo
+    firstPhoto_element = driver.find_elemenet_by_css_selector(' ')
+    firstPhoto_element.click()
 
-# Click on First Photo
-firstPhoto_element = driver.find_elemenet_by_css_selector(' ')
-firstPhoto_element.click()
-
-# Like First Photo
-like_element = driver.find_element_by_css_selector('.coreSpriteHeartOpen')
-like_element.click()
+    # Like First Photo
+    like_element = driver.find_element_by_css_selector('.coreSpriteHeartOpen')
+    like_element.click()
 
 # Exit Browser when finished
 browser.close()
