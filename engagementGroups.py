@@ -22,7 +22,7 @@ driver.find_element_by_xpath('//*[@name="username"]').send_keys('username')
 driver.find_element_by_xpath('//*[@name="password"]').send_keys('password')
 
 # Click login Link
-login_element = driver.find_element_by_css_selector("._5f5mN")
+login_element = driver.find_element_by_css_selector(".L3NKy")
 login_element.click()
 
 # Notifications Screen
